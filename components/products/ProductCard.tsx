@@ -2,6 +2,7 @@ import { FC, useMemo, useState } from 'react';
 import NavLink from 'next/link'
 import { Box, Card, CardActionArea, CardMedia, Grid, Link, Typography } from '@mui/material';
 import { IProduct } from '../../interfaces';
+import { currencyExchange } from '../../helper';
 
 
 interface Props {
@@ -44,7 +45,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
 
             <Box sx={{ marginTop: 1 }} className='fadeIn'>
                 <Typography fontWeight={700}>{product.title}</Typography>
-                <Typography fontWeight={500}>${product.price}</Typography>
+                <Typography fontWeight={500}>{currencyExchange(product.price)}</Typography>
 
             </Box>
 
