@@ -3,6 +3,7 @@ import { ShopLayout } from '../../components/layouts'
 import { initialData } from '../../database/products';
 import { currencyExchange } from '../../helper';
 import { ProductSlideshow } from '../../components/products';
+import { ItemCounter } from '../../components/ui';
 
 
 const product = initialData.products[0];
@@ -26,7 +27,7 @@ const ProductPage = () => {
             {/* Cantidad */}
             <Box sx={{ my: 2}}>
               <Typography variant='subtitle2'>Cantidad</Typography>
-              {/* ItemCounter */}
+              <ItemCounter />
             </Box>
 
             {/* Agregar al carrito */}
