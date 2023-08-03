@@ -1,4 +1,4 @@
-import { } from 'react';
+import { FC } from 'react';
 import NextLink from 'next/link';
 import { initialData } from '../../database/products';
 import { Grid, Link, Typography, CardActionArea, CardMedia, Box, Button } from '@mui/material';
@@ -12,7 +12,11 @@ const productInCart = [
     initialData.products[2],
 ]
 
-export const CartList = () => {
+interface Props {
+    editable?: boolean;
+}
+
+export const CartList: FC<Props> = ({ editable = false }) => {
     return (
         <>
             {
@@ -38,14 +42,22 @@ export const CartList = () => {
                                 <Typography variant='body1'>{product.title}</Typography>
                                 <Typography variant='body1'>Talla: <strong>M</strong></Typography>
 
-                                {/* Conditional */}
-                                <ItemCounter />
+
+                                {
+                                    editable
+                                        ? <ItemCounter />
+                                        : <Typography variant='h5'>3 item</Typography>
+                                }
                             </Box>
                         </Grid>
                         <Grid item xs={2} display='flex' alignItems='center' flexDirection='column'>
                             <Typography variant='subtitle1'>{currencyExchange(product.price)}</Typography>
-                            {/* Editable */}
-                            <Button variant='text' color='secondary'>Remover</Button>
+
+                            {
+                                editable && (
+                                    <Button variant='text' color='secondary'>Remover</Button>
+                                )
+                            }
                         </Grid>
                     </Grid>
                 ))
