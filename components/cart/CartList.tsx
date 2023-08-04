@@ -28,7 +28,7 @@ export const CartList: FC<Props> = ({ editable = false }) => {
                                 <Link>
                                     <CardActionArea>
                                         <CardMedia
-                                            image={`products/${product.images[0]}`}
+                                            image={`/products/${product.images[0]}`}
                                             component='img'
                                             sx={{ borderRadius: '5px' }}
                                         />
@@ -37,7 +37,7 @@ export const CartList: FC<Props> = ({ editable = false }) => {
                             </NextLink>
 
                         </Grid>
-                        <Grid item xs={7}>
+                        <Grid item xs={6}>
                             <Box display='flex' flexDirection='column'>
                                 <Typography variant='body1'>{product.title}</Typography>
                                 <Typography variant='body1'>Talla: <strong>M</strong></Typography>
@@ -50,7 +50,7 @@ export const CartList: FC<Props> = ({ editable = false }) => {
                                 }
                             </Box>
                         </Grid>
-                        <Grid item xs={2} display='flex' alignItems='center' flexDirection='column'>
+                        <Grid item xs={3} display='flex' alignItems='center' flexDirection='column'>
                             <Typography variant='subtitle1'>{currencyExchange(product.price)}</Typography>
 
                             {
