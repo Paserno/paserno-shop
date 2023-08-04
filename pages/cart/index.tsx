@@ -17,12 +17,12 @@ const CartPage = () => {
                     <Card className='summary-card'>
                         <CardContent>
                             <Typography variant='h2'>Orden</Typography>
-                            <Divider sx={{ my:1 }}/>
+                            <Divider sx={{ my: 1 }}/>
                             
                             <OrderSummary />
 
                             <Box sx={{ marginTop: 3 }}>
-                                <Button color='secondary' className='circular-btn' fullWidth>
+                                <Button color='secondary' className='circular-btn' fullWidth >
                                     Checkout
                                 </Button>
 
