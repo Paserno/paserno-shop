@@ -1,40 +1,25 @@
-import NextLink from 'next/link';
-import { Box, Button, Grid, Link, TextField, Typography } from '@mui/material';
+import { Box, Card, CardContent, Grid} from '@mui/material';
 import { AuthLayout } from '../../components/layouts'
+import { LoginForm } from '../../components/auth';
 
 const LoginPage = () => {
-  return (
-    <AuthLayout title={'Ingresar'}>
-        <Box sx={{ width: 350, padding:'10px 20px' }}>
-            <Grid container spacing={2}>
-                <Grid item xs={12}>
-                    <Typography variant='h1' component="h1">Iniciar Sesión</Typography>
-                </Grid>
+    return (
+        <AuthLayout title={'Ingresar'}>
+            <Box sx={{ width: 400, padding: '10px 10px'}}>
+                <Grid container >
+                    <Grid item xs={12}>
 
-                <Grid item xs={12}>
-                    <TextField label="Correo" variant="outlined" fullWidth />
-                </Grid>
-                <Grid item xs={12} sx={{marginTop: 0}}>
-                    <TextField label="Contraseña" type='password' variant="outlined" fullWidth />
-                </Grid>
+                        <Card className='summary-card' sx={{ maxWidth: 400}}>
+                            <CardContent>
+                                <LoginForm />
+                            </CardContent>
+                        </Card>
 
-                <Grid item xs={12}>
-                    <Button color="secondary" className='circular-btn' size='large' fullWidth>
-                        Ingresar
-                    </Button>
+                    </Grid>
                 </Grid>
-
-                <Grid item xs={12} display='flex' justifyContent='end'>
-                    <NextLink href="/auth/register" passHref legacyBehavior>
-                        <Link underline='always'>
-                            ¿No tienes cuenta?
-                        </Link>
-                    </NextLink>
-                </Grid>
-            </Grid>
-        </Box>
-    </AuthLayout>
-  )
+            </Box>
+        </AuthLayout>
+    )
 }
 
 export default LoginPage
