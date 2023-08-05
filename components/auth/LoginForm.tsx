@@ -11,10 +11,10 @@ export const LoginForm = () => {
             </Grid>
 
             <Grid item xs={12}>
-                <TextField label="Correo" variant="outlined" fullWidth />
+                <TextField label="Correo" variant="standard" fullWidth />
             </Grid>
             <Grid item xs={12}>
-                <TextField label="Contraseña" type='password' variant="outlined" fullWidth />
+                <TextField label="Contraseña" type='password' variant="standard" fullWidth />
             </Grid>
 
             <Grid item xs={12}>

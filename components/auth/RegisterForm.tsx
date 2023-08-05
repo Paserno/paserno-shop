@@ -10,13 +10,13 @@ export const RegisterForm = () => {
             </Grid>
 
             <Grid item xs={12} sx={{ marginTop: 0 }}>
-                <TextField label='Nombre' variant='outlined' fullWidth />
+                <TextField label='Nombre' variant='standard' fullWidth />
             </Grid>
             <Grid item xs={12} sx={{ marginTop: 0 }}>
-                <TextField label='Correo' variant='outlined' fullWidth />
+                <TextField label='Correo' variant='standard' fullWidth />
             </Grid>
             <Grid item xs={12} sx={{ marginTop: 0 }}>
-                <TextField label='Contraseña' type='password' variant='outlined' fullWidth />
+                <TextField label='Contraseña' type='password' variant='standard' fullWidth />
             </Grid>
 
             <Grid item xs={12}>
