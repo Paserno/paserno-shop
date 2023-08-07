@@ -19,7 +19,7 @@ const productSchema = new Schema({
     title: { type: String, required: true },
     type: {
         type: String,
-        enum: ['shirts','pants','hoodies','hats'],
+        enum: ['shirts', 'pants', 'hoodies', 'hats'],
         message: '{VALUE} no es un tipo válido',
     },
     gender: {
@@ -30,11 +30,12 @@ const productSchema = new Schema({
         }
     },
 
-},{
+}, {
     timestamps: true,
 });
 
-// TODO: Crerar indice de Mongo
+// Indexar elementos de la base de datos de MongoDB
+productSchema.index({ title: 'text', tags: 'text' });
 
 const Product: Model<IProduct> = mongoose.models.Product || model('Product', productSchema);
 
